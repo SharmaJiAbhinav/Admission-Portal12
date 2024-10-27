@@ -1,0 +1,68 @@
+<%-include('../layouts/header.ejs')%>
+<div class="content-wrapper" style="margin-bottom: 20px; margin-top: 20px">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Course Edit
+            </h1>
+          </div><!-- /.col -->
+                </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content mt-5">
+      <div class="container-fluid">
+        <form action="/courseInsert" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                Name
+                <input type="text" name="name" value="<%= n%>" placeholder="Enter Your Name" class="form-control">
+            </div>
+            <div class="mb-3">
+                Email
+                <input type="text" name="email" value="<%= e%>"  placeholder="Enter your Email" class="form-control">
+            </div>
+            <div class="mb-3">
+                Phone
+                <input type="text" name="phone"  placeholder="Contact Number" class="form-control">
+            </div>
+            <div class="mb-3">
+                D.O.B.
+                <input type="date" name="dob" placeholder="date of birth" class="form-control">
+            </div>
+            <div class="mb-3">
+                Address
+                <input type="text" name="address" placeholder="Address" class="form-control">
+            </div>
+            <div class="mb-3">
+                Gender
+                <input type="radio" name="gender" value="Male" class="mr-2" <%= d.gender='Male'?'checked':'' %>>Male 
+                <input type="radio" name="gender" value="Female" class="mr-2" <%= d.gender='Female'?'checked':'' %>>Female
+            </div>
+            <div class="mb-3">
+                Qualification
+                <select name="qualification"  class="form-control">
+                    <option value="">Qualification</option>
+                    <option value="10" <%= d.college=='10'?'selected':'' %> >10th </option>
+                    <option value="12" <%= d.college=='12'?'selected':'' %>>12th in Mathematics</option>
+                    
+                </select>
+                
+            </div>
+            <div class="mb-3">
+                Course
+                <input type="text" readonly name="Course" value="<% =d.course %>" class="form-control">
+            </div>
+            <button class="btn btn-info">Update</button>
+        </form>
+        <!-- /.card -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+<%-include('../layouts/footer.ejs')%>

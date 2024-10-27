@@ -1,0 +1,91 @@
+<%-include('../layouts/header.ejs')%>
+<div class="content-wrapper" style="margin-bottom: 20px; margin-top: 20px">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Course Display
+            </h1>
+          </div><!-- /.col -->
+                </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content mt-5">
+      <div class="container-fluid">
+        <div class="card">
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="example1" class="table text-center table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Course</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% d.forEach((item,index)=>{%>
+                  <tr>
+                    <td>
+                      <%= index+1 %>
+                    </td>
+                    <td>
+                      <%= item.name %>
+                    </td>
+                    <td>
+                      <%= item.email %>
+                    </td>
+                    <td>
+                      <%= item.phone %>
+                    </td>
+                    <td>
+                      <%= item.dob %>
+                    </td>
+                    <td>
+                      <%= item.address %>
+                    </td>
+                    <td>
+                      <%= item.gender %>
+                    </td>
+                    <td>
+                      <%= item.course %>
+                    </td>
+                    <td> <%= item.qualification %></td>      
+                    <td>
+                      <a href="/courseView/ :id/<%=item._id%>" class="btn btn-info">View</a>
+                      <a href="" class="btn btn-success">Edit</a>
+                    </td>
+                  </tr>
+                  <% }) %>
+              </tbody>
+              <tfoot>
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Course</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+<%-include('../layouts/footer.ejs')%>
